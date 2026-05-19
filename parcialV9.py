@@ -100,7 +100,7 @@ def requisicao_post_teste(startTime ,endTimeFixo, calendario, i, pordia, horasAr
     '''
     Mapeia a variável global.
     '''
-    requisicao = 'curl -X POST -H "Content-type: text/xml" --digest -u admin:jf@2024Emive -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-000000000004</searchID><trackList><trackID>101</trackID></trackList><timeSpanList><timeSpan><startTime>'+str(startTime)+'</startTime><endTime>'+str(endTimeFixo)+'</endTime></timeSpan></timeSpanList><maxResults>'+str(i)+'</maxResults><searchResultPostion>0</searchResultPostion><metadataList><metadataDescriptor>recordType.meta.hikvision.com/timing</metadataDescriptor></metadataList></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/search/"'
+    requisicao = 'curl -X POST -H "Content-type: text/xml" --digest -u usuario:senha -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-000000000004</searchID><trackList><trackID>101</trackID></trackList><timeSpanList><timeSpan><startTime>'+str(startTime)+'</startTime><endTime>'+str(endTimeFixo)+'</endTime></timeSpan></timeSpanList><maxResults>'+str(i)+'</maxResults><searchResultPostion>0</searchResultPostion><metadataList><metadataDescriptor>recordType.meta.hikvision.com/timing</metadataDescriptor></metadataList></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/search/"'
     '''
     Concatena o texto e algumas variáveis para montar o comando curl a ser executado.
     São adicionados o "startTime" obtido após os tratamentos abaixo,
