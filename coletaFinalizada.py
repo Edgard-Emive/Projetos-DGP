@@ -59,7 +59,7 @@ def requisicao_post(startTime ,endTimeFixo, calendario, i, pordia, horasArmazena
     #else:
         #searchIdCustomizado = str(numeroSoma)+searchIdCustomizado
     #requisicao = 'curl -X POST -H "Content-type: text/xml" --digest -u admin:jf@2024Emive -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-000000000'+searchIdCustomizado+'</searchID><trackList><trackID>'+trackIdChannel+'</trackID></trackList><timeSpanList><timeSpan><startTime>'+str(startTime)+'</startTime><endTime>'+str(endTimeFixo)+'</endTime></timeSpan></timeSpanList><maxResults>'+str(i)+'</maxResults><searchResultPostion>0</searchResultPostion><metadataList><metadataDescriptor>recordType.meta.hikvision.com/timing</metadataDescriptor></metadataList></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/search/"'
-    requisicao = 'curl -X POST -H "Content-type: text/xml" --digest -u admin:jf@2024Emive -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-'+str(searchIdCustomizado)+'</searchID><trackList><trackID>'+trackIdChannel+'</trackID></trackList><timeSpanList><timeSpan><startTime>'+str(startTime)+'</startTime><endTime>'+str(endTimeFixo)+'</endTime></timeSpan></timeSpanList><maxResults>'+str(i)+'</maxResults><searchResultPostion>0</searchResultPostion><metadataList><metadataDescriptor>recordType.meta.hikvision.com/timing</metadataDescriptor></metadataList></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/search/"'
+    requisicao = 'curl -X POST -H "Content-type: text/xml" --digest -u usuario:senha -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-'+str(searchIdCustomizado)+'</searchID><trackList><trackID>'+trackIdChannel+'</trackID></trackList><timeSpanList><timeSpan><startTime>'+str(startTime)+'</startTime><endTime>'+str(endTimeFixo)+'</endTime></timeSpan></timeSpanList><maxResults>'+str(i)+'</maxResults><searchResultPostion>0</searchResultPostion><metadataList><metadataDescriptor>recordType.meta.hikvision.com/timing</metadataDescriptor></metadataList></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/search/"'
     print(requisicao, "\n")
     #numeroSoma += 1
     retornoRequisicaoPost = subprocess.check_output(requisicao, shell=True, text=True)
@@ -199,7 +199,7 @@ def requisicao_post(startTime ,endTimeFixo, calendario, i, pordia, horasArmazena
     requisicao_post(proximoStartTime, endTimeFixo, calendario, 64, pordia, horasArmazenadas, listaExcecoes,trackIdChannel)
 
 def requisicao_get():
-    requisicao = 'curl -X GET --digest -u admin:jf@2024Emive "http://10.183.67.13:80/ISAPI/Streaming/channels/"'
+    requisicao = 'curl -X GET --digest -u usuario:senha "http://10.183.67.13:80/ISAPI/Streaming/channels/"'
     '''
     Retorna os canais ativos do dispositivo.
     Canais offline são desconsiderados.
