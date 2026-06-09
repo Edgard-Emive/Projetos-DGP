@@ -1,0 +1,100 @@
+Protocolo ISAPI
+https://raw.githubusercontent.com/loozhengyuan/hikvision-sdk/master/resources/isapi.pdf
+https://www.hikvisioneurope.com/eu/portal/portal/Technology%20Partner%20Program/03-How%20to/How%20to%20search%20and%20download%20the%20video%20file%20from%20NVR%20via%20ISAPI.pdf
+https://www.use-ip.co.uk/forum/threads/retrieving-recordings-from-a-ds-7608nxi-k2-8p-d-using-isapi.12828/
+https://ipcamtalk.com/threads/using-isapi-to-download-short-video-clips.54167/
+https://medium.com/@MohamedASHRIF-25/bypass-the-web-interface-a-beginners-guide-to-hikvision-isapi-fa880153e237
+https://enpinfo.hikvision.com/unzip/20201110210551_77443_doc/GUID-6CFE588F-642B-497E-B146-2C3BFD57D127.html
+https://github.com/reiarseni/hikvision-device-info/blob/main/README.md
+Formatando data e hora obtidos pela função datetime:
+https://www.geeksforgeeks.org/python/remove-seconds-from-the-datetime-in-python/
+Método O.S. | Execução de comandos no CMD
+https://www.geeksforgeeks.org/python/python-os-system-method/
+https://www.w3schools.com/python/python_file_remove.asp
+Subprocess | Obtendo o retorno da execução do código no CMD
+https://www.geeksforgeeks.org/python/print-output-from-os-system-in-python/
+Método split | Divisão de strings
+https://www.w3schools.com/python/ref_string_split.asp
+Executando "curl"
+https://stackoverflow.com/questions/25491090/how-to-use-python-to-execute-a-curl-command
+https://curl.se/docs/manpage.html
+Comentários ao longo do código
+https://academify.com.br/comentarios-em-python/
+Data e hora | Função datetime
+https://www.w3schools.com/python/python_datetime.asp
+https://www.geeksforgeeks.org/python/python-datetime-timedelta-function/
+https://docs.python.org/3/library/datetime.html#timedelta-objects
+Loops
+https://www.geeksforgeeks.org/python/loops-in-python/
+https://www.w3schools.com/python/python_while_loops.asp
+Concatenando strings
+https://www.w3schools.com/python/python_strings_concatenate.asp
+Inicializando múltiplas listas
+https://www.geeksforgeeks.org/python/python-initializing-multiple-lists/
+Dividindo ou cortando listas
+https://www.geeksforgeeks.org/python/how-to-split-lists-in-python/
+https://www.geeksforgeeks.org/python/python-truncate-a-list/
+Transformando listas em strings | join
+https://www.geeksforgeeks.org/python/python-program-to-convert-a-list-to-string/
+Estrutura condicional com mais de uma condição
+https://www.w3schools.com/python/gloss_python_if_and.asp
+Dividindo ou cortando strings
+https://www.w3schools.com/python/python_strings_slicing.asp
+Removendo duplicatas duma lista
+https://www.geeksforgeeks.org/python/python-ways-to-remove-duplicates-from-list/
+Funções
+https://www.w3schools.com/python/python_functions.asp
+
+Manipulação de arquivos
+https://www.w3schools.com/python/ref_file_close.asp
+https://www.geeksforgeeks.org/python/with-statement-in-python/
+
+name == main
+https://www.alura.com.br/artigos/o-que-significa-if-name-main-no-python
+XML
+https://www.w3schools.com/XML/xml_xlink.asp
+https://pt.python-3.com/?p=7660
+https://www.geeksforgeeks.org/python/reading-and-writing-xml-files-in-python/
+https://stackoverflow.com/questions/42891600/python-lxml-how-to-get-children-of-element-by-tag-name
+https://docs.python.org/3/library/xml.etree.elementtree.html
+https://docs.python.org/3/library/xml.etree.elementtree.html#xml.etree.ElementTree.fromstring
+Beuatifulsoup | Tratamento de XML | biblioteca
+https://beautiful-soup-4.readthedocs.io/en/latest/
+https://www.geeksforgeeks.org/python/parsing-tables-and-xml-with-beautifulsoup/
+Requisições web
+https://realpython.com/python-requests/
+Variáveis globais
+https://pt.python-3.com/?p=2846
+Modificando strings
+https://www.w3schools.com/python/ref_string_replace.asp
+Conversão de segundos para formato de hora
+https://stackoverflow.com/questions/1384406/convert-seconds-to-hhmmss-in-python
+Arredonda um número com casas decimais
+https://www.w3schools.com/python/ref_func_round.asp
+Encerramento da execução do código
+https://www.geeksforgeeks.org/python/python-exit-commands-quit-exit-sys-exit-and-os-_exit/
+switch case
+https://www.geeksforgeeks.org/python/switch-case-in-python-replacement/
+delay
+https://www.geeksforgeeks.org/python/how-to-add-time-delay-in-python/
+replace
+https://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python
+
+elif else if
+https://www.geeksforgeeks.org/python/python3-if-if-else-nested-if-if-elif-statements/
+
+Escape sequence (fuga de sequência)
+https://www.geeksforgeeks.org/python/how-to-use-quotes-inside-of-a-string-python/
+
+subprocess
+https://docs.python.org/3/library/subprocess.html#frequently-used-arguments
+https://www.geeksforgeeks.org/python/python-subprocess-module/
+
+dicionarios
+https://www.w3schools.com/python/python_dictionaries.asp
+
+json parse
+https://www.freecodecamp.org/news/how-to-parse-json-in-python-with-examples/
+
+try except (exceções)
+https://www.w3schools.com/python/python_try_except.asp
