@@ -1,0 +1,60 @@
+#Channel No. * 100 + stream type(-1: main stream, -2: sub-stream)
+curl -X POST -H "Content-type: text/xml" --digest -u usuario@senha -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-987654321012</searchID><trackList><trackID>901</trackID></trackList><timeSpanList><timeSpan><startTime>2026-05-12T13:37:44Z</startTime><endTime>2026-05-14T13:11:48Z</endTime></timeSpan></timeSpanList><maxResults>64</maxResults><searchResultPostion>0</searchResultPostion><metadataList><metadataDescriptor>recordType.meta.hikvision.com/timing</metadataDescriptor></metadataList></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/search/"
+curl -X GET --digest -u usuario@senha "http://10.183.67.13:80/ISAPI/Streaming/channels/101/capabilities"
+curl -X GET --digest -u usuario@senha "http://10.183.67.18:80/ISAPI/Streaming/channels/3201/capabilities/"
+curl -X GET --digest -u usuario@senha "http://10.183.67.18:80/ISAPI/Streaming/channels/"
+curl -X GET --digest -u usuario@senha "http://10.183.67.13:80/ISAPI/ContentMgmt/SmartSearch/capabilities/"
+curl -X POST -H "Content-type: text/xml" --digest -u usuario@senha -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-000000000004</searchID><trackList><trackID>901</trackID></trackList ><timeSpanList><timeSpan><startTime>2026-05-12T13:37:44Z</startTime><endTime>2026-05-14T13:11:48Z</endTime></timeSpan></timeSpanList><maxResults>64</maxResults><searchResultPostion>0</searchResultPostion><metadataList><metadataDescriptor>recordType.meta.hikvision.com/timing</metadataDescriptor></metadataList></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/SmartSearch"
+curl -X POST -H "Content-type: text/xml" --digest -u usuario@senha -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-000000000004</searchID><searchResultPosition>0</searchResultPosition><maxResults>64</maxResults><trackID>901</trackID><startTime>2026-03-19T00:00:00Z</startTime><endTime>2026-05-20T00:00:00Z</endTime><type>vehicleMatchedEvent</type></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/SmartSearch"
+
+curl -X POST -H "Content-type: application/json" --digest -u usuario@senha -d "{"jsonrpc": "2.0", "method": "host.update", "params": {"hostid": "172.31.88.106", "name": "Foyer Arena"}, "id": 1}" "https://192.168.108.89:3010/api_jsonrpc.php"
+curl --request POST \
+  --url 'https://192.168.108.89:3010/zabbix' \
+  --header 'Content-Type: application/json-rpc' \
+  --data '{"jsonrpc":"2.0","method":"apiinfo.version","params":{},"id":1}'
+
+curl -X POST -H 'Content-Type: application/json-rpc' -d '{"jsonrpc":"2.0","method":"apiinfo.version","params":{},"id":1}' 'https://192.168.108.89:3010/zabbix'
+
+curl -X POST -H "Content-type: text/xml" --digest -u usuario@senha -d "<CMSearchDescription xmlns="http://www.hikvision.com/ver20/XMLSchema"><searchID>D9834571-7965-4D46-9524-987654321012</searchID><trackList><trackID>901</trackID></trackList><timeSpanList><timeSpan><startTime>2026-05-12T13:37:44Z</startTime><endTime>2026-05-14T13:11:48Z</endTime></timeSpan></timeSpanList><maxResults>64</maxResults><searchResultPostion>0</searchResultPostion><metadataList><metadataDescriptor>recordType.meta.hikvision.com/timing</metadataDescriptor></metadataList></CMSearchDescription>" "http://10.183.67.13:80/ISAPI/ContentMgmt/search/" 'Content-Type: application/json' -d \'{"jsonrpc":"2.0","method":"user.login","params":{"username":"usuario","password":"senha"},"id":1}' | \grep -E -o "([0-9a-f]{32,32})"
+https://192.168.108.89:3010/zabbix/zabbix.php?action=dashboard.view&dashboardid=397&from=now-1h&to=now
+curl --insecure -I https://192.168.108.89:3010/zabbix/api_jsonrpc.php
+curl --insecure -I --url 'https://192.168.108.89:3010/zabbix/api_jsonrpc.php' -s -X POST --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"apiinfo.version","params":{},"id":1}'
+
+'''
+curl --insecure --request --url 'https://192.168.108.89:3010/zabbix/api_jsonrpc.php' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"apiinfo.version","params":{},"id":1}'
+'''
+
+'''
+Zabbix API
+curl --insecure --request --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"apiinfo.version","params":{},"id":1}'
+curl --insecure GET --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"apiinfo.version","params":{},"id":1}'
+curl --insecure --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"apiinfo.version","params":{},"id":1}'
+
+Token
+{$API_KEY}
+
+Autenticação comum
+curl --insecure --request POST --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"user.login","params":{"username":"usuario","password":"senha"},"id":1}'
+
+Autenticação vai token
+curl --request POST --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'Authorization: Bearer {$API_KEY}'
+
+Recupera todos os hosts
+curl --insecure --request POST --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'Authorization: Bearer {$API_KEY}' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"host.get","params":{"output":["hostid", "host"], "selectInterfaces":["interfaceid" ,"ip"]},"id":2}'
+
+Recupera hosts e names
+curl --insecure --request POST --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'Authorization: Bearer {$API_KEY}' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"host.get","params":{"output":["hostid", "host", "name"]},"id":2}'
+
+Recupera hosts, names, interfaces, interfacetype e ip
+curl --insecure --request POST --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'Authorization: Bearer {$API_KEY}' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"host.get","params":{"output":["hostid", "host", "name"], "selectInterfaces":["type"]},"id":2}'
+
+Atualiza name
+curl --insecure --request POST --url 'https://127.0.0.1/zabbix/api_jsonrpc.php' --header 'authorization: Bearer {$API_KEY}' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0", "method":"host.update", "params":{"hostid":"","name": }}'
+
+curl --insecure --request POST --url "https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'authorization: Bearer {$API_KEY}' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0", "method":"host.update", "params":{"hostid":"{$id}}","name": "{$nome}}"}}'
+'''
+Recupera grupos, com nome e id
+curl --insecure --request POST --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'authorization: Bearer {$API_KEY}' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"hostgroup.get","params":{"output":["groupid","name"]},"id":26}'
+
+Recupera os hosts de um grupo específico
+curl --insecure --request POST --url 'https://127.0.0.1:3010/zabbix/api_jsonrpc.php' --header 'authorization: Bearer {$API_KEY}' --header 'Content-Type: application/json-rpc' --data '{"jsonrpc":"2.0","method":"host.get","params":{"output":["hostid","host","name"],"groupids":"38"},"id":26}'
