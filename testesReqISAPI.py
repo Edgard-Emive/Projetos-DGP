@@ -38,7 +38,7 @@ for host in listaDeHosts:
         
     if str(retornoGET) == '<Response [200]>':
         try:
-            retornoPUT = req.request("PUT", urlSNMP, headers=headers, data=payload, auth=digAuth('admin','cftvtecbh@12'))
+            retornoPUT = req.request("PUT", urlSNMP, headers=headers, data=payload, auth=digAuth('usuario','senha'))
             if str(retornoPUT) == '<Response [200]>':
                 print('SNMP habiilitado para o host: ',host,"\n")
         except:
