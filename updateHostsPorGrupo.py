@@ -15,7 +15,7 @@ for grupo in grupos:
 input("\nAqui os grupos registrados, aperte enter para prosseguir: ")
 for item in grupos:
     #print(item["name"], item["groupid"])
-    comandoGetHostsPorGrupo = 'curl --insecure --request POST --url \'https://127.0.0.1:3010/zabbix/api_jsonrpc.php\' --header \'authorization: Bearer {$API_KEY}\' --header \'Content-Type: application/json-rpc\' --data \'{"jsonrpc":"2.0","method":"host.get","params":{"output":["hostid","host","name"],"groupids":"'+item["groupid"]+'"},"id":'+str(idRequisicao)+'}\''
+    comandoGetHostsPorGrupo = 'curl --insecure --request POST --url \'https://{IP}:{PORTA}/zabbix/api_jsonrpc.php\' --header \'authorization: Bearer {$API_KEY}\' --header \'Content-Type: application/json-rpc\' --data \'{"jsonrpc":"2.0","method":"host.get","params":{"output":["hostid","host","name"],"groupids":"'+item["groupid"]+'"},"id":'+str(idRequisicao)+'}\''
     idRequisicao += 1
     #print(comandoGetHostsPorGrupo)
     resultado = json.loads(cmd.check_output(comandoGetHostsPorGrupo, shell=True, text=False))
@@ -38,7 +38,7 @@ for item in grupos:
             nomeAtual = nomeAtual.replace('__','_')
             novoNome = prefixo + nomeAtual
             print('novo nome ', novoNome)
-            comandoUpdateNomeHost = 'curl --insecure --request POST --url \'https://127.0.0.1:3010/zabbix/api_jsonrpc.php\' --header \'authorization: Bearer {$API_KEY}\' --header \'Content-Type: application/json-rpc\' --data \'{"jsonrpc":"2.0", "method":"host.update", "params":{"hostid":"' + host["hostid"] + '","name":"' + novoNome + '"}}\''
+            comandoUpdateNomeHost = 'curl --insecure --request POST --url \'https://{IP}:{PORTA}/zabbix/api_jsonrpc.php\' --header \'authorization: Bearer {$API_KEY}\' --header \'Content-Type: application/json-rpc\' --data \'{"jsonrpc":"2.0", "method":"host.update", "params":{"hostid":"' + host["hostid"] + '","name":"' + novoNome + '"}}\''
             #print(comandoUpdateNomeHost)
             #input("Aperte enter pra renomear: ")
             cmd.check_output(comandoUpdateNomeHost, shell=True, text=True)
