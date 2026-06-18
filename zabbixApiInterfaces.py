@@ -4,11 +4,11 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-url = "https://192.168.108.89:3010/zabbix/api_jsonrpc.php"
+url = "https://{IP}:{PORTA}/zabbix/api_jsonrpc.php"
 
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'Bearer 4851d0cb9ff55b45e20b977970d58878f1f77c26147f6fbd1bd3cac24a209446'
+  'Authorization': 'Bearer {CHAVE_API}'
 }
 
 payload = json.dumps({
@@ -76,7 +76,7 @@ for item in listaHosts:
                     "useip": "1",
                     "ip": item["host"],
                     "dns": "",
-                    "port": "161",
+                    "port": "{PORTA}",
                     "details": {
                         "version": "2",
                         "bulk": "1",
@@ -104,7 +104,7 @@ for item in listaHosts:
                     "useip": "1",
                     "ip": item["host"],
                     "dns": "",
-                    "port": "161",
+                    "port": "{PORTA}",
                     "details": {
                         "version": "2",
                         "bulk": "1",
