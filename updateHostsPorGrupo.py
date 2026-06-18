@@ -1,7 +1,7 @@
 import subprocess as cmd
 import json
 
-comandoGetGroups = 'curl --insecure --request POST --url \'https://127.0.0.1:3010/zabbix/api_jsonrpc.php\' --header \'authorization: Bearer {$API_KEY}\' --header \'Content-Type: application/json-rpc\' --data \'{\"jsonrpc\":\"2.0\",\"method\":\"hostgroup.get\",\"params\":{\"output\":[\"groupid\",\"name\"]},\"id\":10}\''
+comandoGetGroups = 'curl --insecure --request POST --url \'https://{IP}:{PORTA}/zabbix/api_jsonrpc.php\' --header \'authorization: Bearer {$API_KEY}\' --header \'Content-Type: application/json-rpc\' --data \'{\"jsonrpc\":\"2.0\",\"method\":\"hostgroup.get\",\"params\":{\"output\":[\"groupid\",\"name\"]},\"id\":10}\''
 
 
 #print(comandoGetGroups)
